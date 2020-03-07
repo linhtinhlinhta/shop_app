@@ -11,5 +11,10 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
-//= require_tree .
+//= require jquery.min
+//= require bootstrap.min
+//= require slick.min
+//= require nouislider.min
+//= require jquery.zoom.min
+//= require main
+//= cable.js
