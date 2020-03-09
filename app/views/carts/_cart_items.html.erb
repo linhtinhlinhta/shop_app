@@ -1,0 +1,79 @@
+
+<div class="section">
+    <!-- container -->
+    <div class="container">
+      <!-- row -->
+      <div class="row">
+        <form id="checkout-form" class="clearfix">
+          <div class="col-md-12">
+            <div class="order-summary clearfix">
+              <div class="section-title">
+                <h3 class="title">Order Review</h3>
+              </div>
+              <table class="shopping-cart-table table">
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th></th>
+                    <th class="text-center">Price</th>
+                    <th class="text-center">Quantity</th>
+                    <th class="text-center">Total</th>
+                    <th class="text-right"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @order_items.each do |item| %>
+                    <tr>
+                      <td class="thumb"><%= image_tag item.product.images.first.image_url %></td>
+                      <td class="details">
+                        <a href="#"><%= item.product.name %></a>
+                        <ul>
+                          <li><span>Size: XL</span></li>
+                          <li><span>Color: Camelot</span></li>
+                        </ul>
+                      </td>
+                      <%= form_for(item, remote: true) do |f| %>
+                        <%= f.hidden_field :product_id, value: item.product.id %>
+                        <td class="price text-center">
+                          <%= item.product.price %><br><del class="font-weak"><small>$40.00</small></del>
+                        </td>
+                        <td class="qty text-center">
+                          <input class="input" type="number" value="1">
+                        </td>
+                        <td class="total text-center"><strong class="primary-color"><%= item.total_price %></strong></td>
+                        <td class="text-right"><%= link_to '<i class="fa fa-close"></i>'.html_safe, item, method: :delete, remote: true, class: 'btn btn-danger' %>
+                        </td>
+                      <% end %>
+                    </tr>
+                  <% end %>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th class="empty" colspan="3"></th>
+                    <th>SUBTOTAL</th>
+                    <th colspan="2" class="sub-total"><%= current_order.subtotal %></th>
+                  </tr>
+                  <tr>
+                    <th class="empty" colspan="3"></th>
+                    <th>SHIPING</th>
+                    <td colspan="2">Free Shipping</td>
+                  </tr>
+                  <tr>
+                    <th class="empty" colspan="3"></th>
+                    <th>TOTAL</th>
+                    <th colspan="2" class="total"><%= current_order.subtotal %></th>
+                  </tr>
+                </tfoot>
+              </table>
+              <div class="pull-right">
+                <button class="primary-btn">Place Order</button>
+              </div>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+

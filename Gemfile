@@ -59,3 +59,5 @@ gem 'devise'
 gem "ransack"
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'jquery-rails'
+
