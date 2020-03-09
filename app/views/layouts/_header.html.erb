@@ -8,10 +8,10 @@
             </div>
 
             <div class="header-search">
-              <form>
-                <input class="input search-input" type="text" placeholder="Enter your keyword">
-                <button class="search-btn"><i class="fa fa-search"></i></button>
-              </form>
+              <%= search_form_for @q do |f| %>
+                <%= f.search_field :name_cont %>
+                <%= f.submit %>
+              <% end %>
             </div>
           </div>
           <div class="pull-right">
