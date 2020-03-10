@@ -1,6 +1,7 @@
 class HomesController < ApplicationController
   def index
-    @products = Product.all.page(params[:page]).per(8)
+    @q = Product.ransack(params[:q])
+    @products = @q.result(distinct: true).page(params[:page]).per(8)
   end
 
   def show

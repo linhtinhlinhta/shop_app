@@ -56,3 +56,4 @@ gem 'rails_admin'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'devise'
+gem "ransack"
