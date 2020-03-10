@@ -10,9 +10,11 @@
             <div class="header-search">
               <%= search_form_for @q do |f| %>
                 <%= f.search_field :name_cont %>
+                <%= f.select :category_id_eq, options_from_collection_for_select(Category.all, "id", "name"), include_blank: true %>
                 <%= f.submit %>
               <% end %>
             </div>
+
           </div>
           <div class="pull-right">
             <ul class="header-btns">
