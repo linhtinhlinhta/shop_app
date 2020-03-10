@@ -11131,3 +11131,106 @@ Completed 200 OK in 378ms (Views: 355.8ms | ActiveRecord: 12.6ms)
 >>>>>>> Add ransack gem
 
 
+Started GET "/" for ::1 at 2020-03-10 10:37:48 +0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT  DISTINCT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 2], ["LIMIT", 1]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 3], ["LIMIT", 1]]
+  [1m[36mImage Load (1.5ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 4], ["LIMIT", 1]]
+  [1m[36mImage Load (0.7ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 5], ["LIMIT", 1]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 6], ["LIMIT", 1]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 7], ["LIMIT", 1]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 8], ["LIMIT", 1]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[36mImage Load (1.8ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 10], ["LIMIT", 1]]
+  [1m[36mImage Load (2.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 11], ["LIMIT", 1]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 12], ["LIMIT", 1]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 13], ["LIMIT", 1]]
+  [1m[36mImage Load (1.6ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 14], ["LIMIT", 1]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 15], ["LIMIT", 1]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 16], ["LIMIT", 1]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 17], ["LIMIT", 1]]
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 18], ["LIMIT", 1]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 19], ["LIMIT", 1]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 20], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  DISTINCT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 8], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(DISTINCT "products"."id") FROM "products"[0m
+  Rendered homes/index.html.erb within layouts/application (1831.0ms)
+  Rendered layouts/_header.html.erb (16.3ms)
+  Rendered layouts/_footer.html.erb (6.0ms)
+Completed 200 OK in 2105ms (Views: 1992.4ms | ActiveRecord: 25.2ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-03-10 10:37:58 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (86.2ms)
+  Rendered layouts/_header.html.erb (19.7ms)
+Completed 500 Internal Server Error in 341ms (ActiveRecord: 3.9ms)
+
+
+  
+ActionView::Template::Error (No Ransack::Search object was provided to search_form_for!):
+     8:             </div>
+     9: 
+    10:             <div class="header-search">
+    11:               <%= search_form_for @q do |f| %>
+    12:                 <%= f.search_field :name_cont %>
+    13:                 <%= f.submit %>
+    14:               <% end %>
+  
+app/views/layouts/_header.html.erb:11:in `_app_views_layouts__header_html_erb__4163999582321747792_70294441180820'
+app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb__2049657016675851774_70294441007360'
+Started GET "/users/sign_in" for ::1 at 2020-03-10 10:38:47 +0700
+Processing by Devise::SessionsController#new as HTML
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from set_search at /home/linh/Desktop/shop_app/app/controllers/application_controller.rb:11)
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.2ms)
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (25.7ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 186ms (Views: 130.5ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/categories/1" for ::1 at 2020-03-10 10:38:50 +0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from set_search at /home/linh/Desktop/shop_app/app/controllers/application_controller.rb:11)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."category_id" = ? LIMIT ? OFFSET ?[0m  [["category_id", 1], ["LIMIT", 9], ["OFFSET", 0]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mImage Load (0.7ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 2], ["LIMIT", 1]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 3], ["LIMIT", 1]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 4], ["LIMIT", 1]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 5], ["LIMIT", 1]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 6], ["LIMIT", 1]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 7], ["LIMIT", 1]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 8], ["LIMIT", 1]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 9], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE "products"."category_id" = ?[0m  [["category_id", 1]]
+  Rendered categories/show.html.erb within layouts/application (133.0ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (6.0ms)
+  Rendered layouts/_footer.html.erb (2.6ms)
+Completed 200 OK in 242ms (Views: 215.2ms | ActiveRecord: 6.1ms)
+
+
