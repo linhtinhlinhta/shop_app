@@ -136,11 +136,13 @@
                         <i class="fa fa-star-o empty"></i>
                       </div>
                       <h2 class="product-name"><%= link_to (product.name.truncate(10)), :controller => "products", :action => "show", :id => product.id %></h2>
+                      <% if current_user %>
                       <div class="product-btns">
                         <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                         <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
                         <%= f.submit "Add to cart", class: 'primary-btn add-to-cart' %>
                       </div>
+                      <% end %>
                     <% end %>
                   </div>
                 </div>

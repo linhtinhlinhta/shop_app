@@ -1,5 +1,6 @@
-<% if @order.errors.any? || @order_item.errors.any? %>
-  alert("Invalid")
-<% else %>
-$(".qty").html("<%= escape_javascript(render 'layouts/cart') %>")
-<% end %>
+
+   // <% if current_user %>
+  $(".qty").html("<%= escape_javascript(render 'layouts/cart') %>")
+// <% else %>
+//   alert("Ban chua dang nhap!")
+// <% end %>
