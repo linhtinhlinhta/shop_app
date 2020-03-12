@@ -16,3 +16,4 @@ class ApplicationController < ActionController::Base
     @q=Product.search(params[:q])
   end
 end
+

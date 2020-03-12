@@ -3,7 +3,6 @@ class ImagesController < ApplicationController
     @product = Product.find(params[:product_id])
     @image = @product.images.create(image_params)
     redirect_to product_path(@product)
-
   end
 
   private
@@ -11,3 +10,5 @@ class ImagesController < ApplicationController
     params.require(:comment).permit(:image_url, :color)
   end
 end
+
+
