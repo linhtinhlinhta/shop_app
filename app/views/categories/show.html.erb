@@ -7,7 +7,7 @@
     </ul>
   </div>
 </div>
-  <!-- /BREADCRUMB -->
+
 <div class="section">
   <div class="container">
     <div class="row">
@@ -79,6 +79,7 @@
           </div>
         </div>
       </div>
+
       <div id="main" class="col-md-9">
         <!-- store top filter -->
         <div class="store-filter clearfix">
@@ -127,7 +128,7 @@
                       <span>New</span>
                       <span class="sale">-20%</span>
                     </div>
-                    <%= image_tag product.images.first.image_url %>
+                    <%= image_tag product.images.first.image_url.url %>
                   </div>
                   <div class="product-body">
                     <h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3>
