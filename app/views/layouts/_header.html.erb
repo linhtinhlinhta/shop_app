@@ -6,7 +6,6 @@
         <div class="header-logo">
           <%= link_to image_tag("logo.png"), root_path %>
         </div>
-
         <div class="header-search">
           <%= search_form_for @q do |f| %>
             <%= f.search_field :name_cont %>
@@ -79,14 +78,15 @@
                   </div>
                 </div>
               </div>
-            </li>
-            <li class="nav-toggle">
-              <button class="nav-toggle-btn main-btn icon-btn"><i class="fa fa-bars"></i></button>
-            </li>
-          </ul>
-        </div>
+            </div>
+          </li>
+          <li class="nav-toggle">
+            <button class="nav-toggle-btn main-btn icon-btn"><i class="fa fa-bars"></i></button>
+          </li>
+        </ul>
       </div>
     </div>
+  </div>
 </header>
 
 <div id="navigation">
@@ -100,7 +100,6 @@
           <% end %>
         </ul>
       </div>
-
       <div class="menu-nav">
         <span class="menu-header">Menu <i class="fa fa-bars"></i></span>
         <ul class="menu-list">
@@ -114,4 +113,3 @@
     </div>
   </div>
 </div>
-

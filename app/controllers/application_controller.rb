@@ -1,6 +1,4 @@
 class ApplicationController < ActionController::Base
-  include ApplicationHelper
-
   before_action :list_categories
   before_action :set_search
   before_action :configure_permitted_parameters, if: :devise_controller?

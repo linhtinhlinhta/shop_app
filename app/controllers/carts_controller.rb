@@ -1,5 +1,11 @@
 class CartsController < ApplicationController
   def show
-    @order_items = current_order.order_items
+    @cart = current_user.cart
+    @order_items = @cart.order_items
+  end
+  def destroy
+    @cart = current_user.cart
+    @cart.destroy
   end
 end
+

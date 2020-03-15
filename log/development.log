@@ -17847,3 +17847,1049 @@ DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please us
 Completed 200 OK in 270ms (Views: 246.7ms | ActiveRecord: 9.1ms)
 
 
+Started GET "/" for ::1 at 2020-03-18 11:46:31 +0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.7) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddCodeToProduct (20200312101800)
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (12.9ms)[0m  [1m[35mALTER TABLE "products" ADD "code" integer[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200312101800"]]
+  [1m[35m (94.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddAvatarToUsers (20200313144733)
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (3.3ms)[0m  [1m[35mALTER TABLE "users" ADD "avatar" varchar[0m
+  [1m[35mSQL (7.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200313144733"]]
+  [1m[35m (65.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.9ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for ::1 at 2020-03-18 11:48:08 +0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomesController#index as HTML
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from set_search at /home/linh/Desktop/shop_app/app/controllers/application_controller.rb:16)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 441ms (ActiveRecord: 10.1ms)
+
+
+  
+NoMethodError (undefined method `cart' for nil:NilClass):
+  
+app/controllers/homes_controller.rb:4:in `index'
+Started GET "/" for ::1 at 2020-03-18 11:48:58 +0700
+Processing by HomesController#index as HTML
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from set_search at /home/linh/Desktop/shop_app/app/controllers/application_controller.rb:16)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering homes/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  DISTINCT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  [1m[36mImage Load (2.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mImage Load (1.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 2], ["LIMIT", 1]]
+  [1m[36mImage Load (1.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 3], ["LIMIT", 1]]
+  [1m[36mImage Load (1.6ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 4], ["LIMIT", 1]]
+  [1m[36mImage Load (2.7ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 5], ["LIMIT", 1]]
+  [1m[36mImage Load (2.6ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 6], ["LIMIT", 1]]
+  [1m[36mImage Load (2.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 7], ["LIMIT", 1]]
+  [1m[36mImage Load (2.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 8], ["LIMIT", 1]]
+  [1m[36mImage Load (1.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (1.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[36mImage Load (1.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 10], ["LIMIT", 1]]
+  [1m[36mImage Load (2.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 11], ["LIMIT", 1]]
+  [1m[36mImage Load (1.5ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 12], ["LIMIT", 1]]
+  [1m[36mImage Load (2.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 13], ["LIMIT", 1]]
+  [1m[36mImage Load (1.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 14], ["LIMIT", 1]]
+  [1m[36mImage Load (1.9ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 15], ["LIMIT", 1]]
+  [1m[36mImage Load (1.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 16], ["LIMIT", 1]]
+  [1m[36mImage Load (2.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 17], ["LIMIT", 1]]
+  [1m[36mImage Load (2.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 18], ["LIMIT", 1]]
+  [1m[36mImage Load (1.6ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 19], ["LIMIT", 1]]
+  [1m[36mImage Load (1.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 20], ["LIMIT", 1]]
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT  DISTINCT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 8], ["LIMIT", 1]]
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "products"."id") FROM "products"[0m
+  Rendered homes/index.html.erb within layouts/application (5132.9ms)
+  [1m[36mCACHE Category Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (82.3ms)
+  Rendered layouts/_footer.html.erb (9.2ms)
+Completed 200 OK in 5995ms (Views: 5653.5ms | ActiveRecord: 74.5ms)
+
+
+Started GET "/uploads/image/image_url/4/product2.jpg" for ::1 at 2020-03-18 11:49:05 +0700
+Started GET "/uploads/image/image_url/8/product3.jpg" for ::1 at 2020-03-18 11:49:05 +0700
+Started GET "/uploads/image/image_url/1/product1.jpg" for ::1 at 2020-03-18 11:49:05 +0700
+  
+Started GET "/uploads/image/image_url/12/product4.jpg" for ::1 at 2020-03-18 11:49:05 +0700
+  
+Started GET "/uploads/image/image_url/15/product5.jpg" for ::1 at 2020-03-18 11:49:05 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/uploads/image/image_url/4/product2.jpg"):
+ActionController::RoutingError (No route matches [GET] "/uploads/image/image_url/1/product1.jpg"):
+ActionController::RoutingError (No route matches [GET] "/uploads/image/image_url/8/product3.jpg"):
+  
+  
+  
+  
+  
+ActionController::RoutingError (No route matches [GET] "/uploads/image/image_url/12/product4.jpg"):
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+ActionController::RoutingError (No route matches [GET] "/uploads/image/image_url/15/product5.jpg"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/uploads/image/image_url/28/product9.jpg" for ::1 at 2020-03-18 11:49:12 +0700
+  
+Started GET "/uploads/image/image_url/22/product7.jpg" for ::1 at 2020-03-18 11:49:12 +0700
+Started GET "/uploads/image/image_url/25/product8.jpg" for ::1 at 2020-03-18 11:49:12 +0700
+ActionController::RoutingError (No route matches [GET] "/uploads/image/image_url/28/product9.jpg"):
+  
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+ActionController::RoutingError (No route matches [GET] "/uploads/image/image_url/22/product7.jpg"):
+  
+  
+Started GET "/uploads/image/image_url/33/product11.jpg" for ::1 at 2020-03-18 11:49:12 +0700
+ActionController::RoutingError (No route matches [GET] "/uploads/image/image_url/25/product8.jpg"):
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/uploads/image/image_url/31/product10.jpg" for ::1 at 2020-03-18 11:49:12 +0700
+ActionController::RoutingError (No route matches [GET] "/uploads/image/image_url/33/product11.jpg"):
+  
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+ActionController::RoutingError (No route matches [GET] "/uploads/image/image_url/31/product10.jpg"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/uploads/image/image_url/18/product6.jpg" for ::1 at 2020-03-18 11:49:17 +0700
+Started GET "/uploads/image/image_url/41/product14.jpg" for ::1 at 2020-03-18 11:49:17 +0700
+  
+  
+ActionController::RoutingError (No route matches [GET] "/uploads/image/image_url/18/product6.jpg"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+ActionController::RoutingError (No route matches [GET] "/uploads/image/image_url/41/product14.jpg"):
+  
+Started GET "/uploads/image/image_url/39/product13.jpg" for ::1 at 2020-03-18 11:49:18 +0700
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/uploads/image/image_url/39/product13.jpg"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/uploads/image/image_url/45/product16.jpg" for ::1 at 2020-03-18 11:49:18 +0700
+Started GET "/uploads/image/image_url/50/product18.jpg" for ::1 at 2020-03-18 11:49:18 +0700
+  
+  
+ActionController::RoutingError (No route matches [GET] "/uploads/image/image_url/45/product16.jpg"):
+ActionController::RoutingError (No route matches [GET] "/uploads/image/image_url/50/product18.jpg"):
+  
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/uploads/image/image_url/54/product19.jpg" for ::1 at 2020-03-18 11:49:23 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/uploads/image/image_url/54/product19.jpg"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/uploads/image/image_url/36/product12.jpg" for ::1 at 2020-03-18 11:49:23 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/uploads/image/image_url/36/product12.jpg"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/uploads/image/image_url/47/product17.jpg" for ::1 at 2020-03-18 11:49:24 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/uploads/image/image_url/47/product17.jpg"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/uploads/image/image_url/56/product20.jpg" for ::1 at 2020-03-18 11:49:25 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/uploads/image/image_url/56/product20.jpg"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/uploads/image/image_url/43/product15.jpg" for ::1 at 2020-03-18 11:49:26 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/uploads/image/image_url/43/product15.jpg"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/sign_in" for ::1 at 2020-03-18 11:49:59 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (14.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (167.5ms)
+  [1m[36mCategory Load (2.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (79.5ms)
+  Rendered layouts/_footer.html.erb (12.5ms)
+Completed 200 OK in 792ms (Views: 760.6ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-03-18 11:50:07 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wa32fyKQmTUUqafDMXXE/fqeRXzVNcebxlRpfNs844ESwylYl4Phho0rftfnEe/Eo4etyuRaiWATUERKWIRppA==", "user"=>{"email"=>"hihi@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "hihi@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1307ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2020-03-18 11:50:08 +0700
+Processing by HomesController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCart Load (1.0ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering homes/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mProduct Load (2.1ms)[0m  [1m[34mSELECT  DISTINCT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  [1m[36mImage Load (1.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[36mCACHE Image Load (0.6ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mImage Load (3.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 2], ["LIMIT", 1]]
+  [1m[36mImage Load (1.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 3], ["LIMIT", 1]]
+  [1m[36mImage Load (0.9ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 4], ["LIMIT", 1]]
+  [1m[36mImage Load (1.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 5], ["LIMIT", 1]]
+  [1m[36mImage Load (1.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 6], ["LIMIT", 1]]
+  [1m[36mImage Load (2.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 7], ["LIMIT", 1]]
+  [1m[36mImage Load (1.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 8], ["LIMIT", 1]]
+  [1m[36mImage Load (2.5ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (2.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[36mImage Load (2.7ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 10], ["LIMIT", 1]]
+  [1m[36mImage Load (2.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 11], ["LIMIT", 1]]
+  [1m[36mImage Load (1.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 12], ["LIMIT", 1]]
+  [1m[36mImage Load (3.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 13], ["LIMIT", 1]]
+  [1m[36mImage Load (2.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 14], ["LIMIT", 1]]
+  [1m[36mImage Load (2.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 15], ["LIMIT", 1]]
+  [1m[36mImage Load (1.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 16], ["LIMIT", 1]]
+  [1m[36mImage Load (1.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 17], ["LIMIT", 1]]
+  [1m[36mImage Load (2.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 18], ["LIMIT", 1]]
+  [1m[36mImage Load (1.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 19], ["LIMIT", 1]]
+  [1m[36mImage Load (0.9ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 20], ["LIMIT", 1]]
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT  DISTINCT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  [1m[36mCACHE Image Load (0.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 8], ["LIMIT", 1]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(DISTINCT "products"."id") FROM "products"[0m
+  Rendered homes/index.html.erb within layouts/application (976.9ms)
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (33.2ms)
+Completed 500 Internal Server Error in 1762ms (ActiveRecord: 61.9ms)
+
+
+  
+ActionView::Template::Error (nil is not a valid asset source):
+    20:           <li class="header-account dropdown default-dropdown">
+    21:             <% if current_user %>
+    22:               <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
+    23:                 <%= image_tag current_user.avatar.url, size:"40x40" %>
+    24:               </div>
+    25:               <ul class="custom-menu">
+    26:                 <li><%= link_to "Profile", user_path(current_user) %></li>
+  
+app/views/layouts/_header.html.erb:23:in `_app_views_layouts__header_html_erb___1714779617761173867_69966798826060'
+app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb__1943158869343748533_69966899093340'
+Started GET "/users/sign_in" for ::1 at 2020-03-18 11:50:24 +0700
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 24ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-03-18 11:50:34 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 23ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2020-03-18 11:50:34 +0700
+Processing by HomesController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCart Load (0.8ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering homes/index.html.erb within layouts/application
+  [1m[36mCategory Load (5.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT  DISTINCT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  [1m[36mImage Load (1.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (2.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[36mCACHE Image Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mImage Load (1.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 2], ["LIMIT", 1]]
+  [1m[36mImage Load (1.6ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 3], ["LIMIT", 1]]
+  [1m[36mImage Load (1.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 4], ["LIMIT", 1]]
+  [1m[36mImage Load (2.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 5], ["LIMIT", 1]]
+  [1m[36mImage Load (2.7ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 6], ["LIMIT", 1]]
+  [1m[36mImage Load (1.8ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 7], ["LIMIT", 1]]
+  [1m[36mImage Load (2.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 8], ["LIMIT", 1]]
+  [1m[36mImage Load (1.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (2.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[36mImage Load (2.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 10], ["LIMIT", 1]]
+  [1m[36mImage Load (2.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 11], ["LIMIT", 1]]
+  [1m[36mImage Load (1.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 12], ["LIMIT", 1]]
+  [1m[36mImage Load (2.5ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 13], ["LIMIT", 1]]
+  [1m[36mImage Load (2.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 14], ["LIMIT", 1]]
+  [1m[36mImage Load (1.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 15], ["LIMIT", 1]]
+  [1m[36mImage Load (2.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 16], ["LIMIT", 1]]
+  [1m[36mImage Load (2.7ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 17], ["LIMIT", 1]]
+  [1m[36mImage Load (1.9ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 18], ["LIMIT", 1]]
+  [1m[36mImage Load (1.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 19], ["LIMIT", 1]]
+  [1m[36mImage Load (3.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 20], ["LIMIT", 1]]
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT  DISTINCT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 8], ["LIMIT", 1]]
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(DISTINCT "products"."id") FROM "products"[0m
+  Rendered homes/index.html.erb within layouts/application (960.1ms)
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (44.1ms)
+Completed 500 Internal Server Error in 1339ms (ActiveRecord: 57.2ms)
+
+
+  
+ActionView::Template::Error (nil is not a valid asset source):
+    20:           <li class="header-account dropdown default-dropdown">
+    21:             <% if current_user %>
+    22:               <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
+    23:                 <%= image_tag current_user.avatar.url, size:"40x40" %>
+    24:               </div>
+    25:               <ul class="custom-menu">
+    26:                 <li><%= link_to "Profile", user_path(current_user) %></li>
+  
+app/views/layouts/_header.html.erb:23:in `_app_views_layouts__header_html_erb___1714779617761173867_69966754825920'
+app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb__1943158869343748533_69966755739740'
+Started GET "/users/sign_in" for ::1 at 2020-03-18 11:50:47 +0700
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 22ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2020-03-18 11:50:47 +0700
+Processing by HomesController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCart Load (0.8ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering homes/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mProduct Load (2.3ms)[0m  [1m[34mSELECT  DISTINCT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  [1m[36mImage Load (1.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[36mCACHE Image Load (0.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mImage Load (2.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 2], ["LIMIT", 1]]
+  [1m[36mImage Load (1.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 3], ["LIMIT", 1]]
+  [1m[36mImage Load (1.9ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 4], ["LIMIT", 1]]
+  [1m[36mImage Load (1.8ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 5], ["LIMIT", 1]]
+  [1m[36mImage Load (2.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 6], ["LIMIT", 1]]
+  [1m[36mImage Load (1.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 7], ["LIMIT", 1]]
+  [1m[36mImage Load (1.7ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 8], ["LIMIT", 1]]
+  [1m[36mImage Load (1.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[36mImage Load (1.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 10], ["LIMIT", 1]]
+  [1m[36mImage Load (1.6ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 11], ["LIMIT", 1]]
+  [1m[36mImage Load (2.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 12], ["LIMIT", 1]]
+  [1m[36mImage Load (1.6ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 13], ["LIMIT", 1]]
+  [1m[36mImage Load (1.7ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 14], ["LIMIT", 1]]
+  [1m[36mImage Load (2.8ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 15], ["LIMIT", 1]]
+  [1m[36mImage Load (1.9ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 16], ["LIMIT", 1]]
+  [1m[36mImage Load (1.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 17], ["LIMIT", 1]]
+  [1m[36mImage Load (1.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 18], ["LIMIT", 1]]
+  [1m[36mImage Load (1.5ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 19], ["LIMIT", 1]]
+  [1m[36mImage Load (1.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 20], ["LIMIT", 1]]
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT  DISTINCT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  [1m[36mCACHE Image Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 8], ["LIMIT", 1]]
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "products"."id") FROM "products"[0m
+  Rendered homes/index.html.erb within layouts/application (913.3ms)
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (44.0ms)
+Completed 500 Internal Server Error in 1283ms (ActiveRecord: 47.1ms)
+
+
+  
+ActionView::Template::Error (nil is not a valid asset source):
+    20:           <li class="header-account dropdown default-dropdown">
+    21:             <% if current_user %>
+    22:               <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
+    23:                 <%= image_tag current_user.avatar.url, size:"40x40" %>
+    24:               </div>
+    25:               <ul class="custom-menu">
+    26:                 <li><%= link_to "Profile", user_path(current_user) %></li>
+  
+app/views/layouts/_header.html.erb:23:in `_app_views_layouts__header_html_erb___1714779617761173867_47286520760880'
+app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb__1943158869343748533_47286546472140'
+Started GET "/users/sign_out" for ::1 at 2020-03-18 11:51:06 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_out):
+  
+app/controllers/users_controller.rb:3:in `show'
+Started GET "/" for ::1 at 2020-03-18 11:51:19 +0700
+Processing by HomesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering homes/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  DISTINCT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[36mCACHE Image Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 2], ["LIMIT", 1]]
+  [1m[36mImage Load (1.8ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 3], ["LIMIT", 1]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 4], ["LIMIT", 1]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 5], ["LIMIT", 1]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 6], ["LIMIT", 1]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 7], ["LIMIT", 1]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 8], ["LIMIT", 1]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category_id" = ?[0m  [["category_id", 2]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 10], ["LIMIT", 1]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 11], ["LIMIT", 1]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 12], ["LIMIT", 1]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 13], ["LIMIT", 1]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 14], ["LIMIT", 1]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 15], ["LIMIT", 1]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 16], ["LIMIT", 1]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 17], ["LIMIT", 1]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 18], ["LIMIT", 1]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 19], ["LIMIT", 1]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 20], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  DISTINCT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."product_id" = ? ORDER BY "images"."id" ASC LIMIT ?[0m  [["product_id", 8], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "products"."id") FROM "products"[0m
+  Rendered homes/index.html.erb within layouts/application (141.3ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_header.html.erb (4.9ms)
+Completed 500 Internal Server Error in 193ms (ActiveRecord: 9.2ms)
+
+
+  
+ActionView::Template::Error (nil is not a valid asset source):
+    20:           <li class="header-account dropdown default-dropdown">
+    21:             <% if current_user %>
+    22:               <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
+    23:                 <%= image_tag current_user.avatar.url, size:"40x40" %>
+    24:               </div>
+    25:               <ul class="custom-menu">
+    26:                 <li><%= link_to "Profile", user_path(current_user) %></li>
+  
+app/views/layouts/_header.html.erb:23:in `_app_views_layouts__header_html_erb___1714779617761173867_69966755502200'
+app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb__1943158869343748533_69966754576440'

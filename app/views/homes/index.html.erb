@@ -1,6 +1,3 @@
-
-
-
 <div id="home">
   <div class="container">
     <div class="home-wrap">
@@ -105,11 +102,13 @@
                 <i class="fa fa-star-o empty"></i>
               </div>
               <h2 class="product-name"><%= link_to @products.first.name, :controller => "products", :action => "show", :id => @products.first.id %></h2>
-              <div class="product-btns">
-                <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-                <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-              </div>
+              <% if current_user %>
+                <div class="product-btns">
+                  <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
+                  <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
+                  <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                </div>
+              <% end %>
             </div>
           </div>
         </div>
@@ -122,27 +121,22 @@
                   <div class="product-thumb">
                     <%= image_tag product.images.first.image_url.url %>
                   </div>
-
                   <div class="product-body">
-                    <%= form_for(@order_item, remote: true) do |f| %>
-                      <%= f.hidden_field :product_id, value: product.id %>
-                      <%= f.hidden_field :quantity, value: 1 %>
-                      <h3 class="product-price"><%= product.price %></h3>
-                      <div class="product-rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o empty"></i>
-                      </div>
-                      <h2 class="product-name"><%= link_to (product.name.truncate(10)), :controller => "products", :action => "show", :id => product.id %></h2>
-                      <% if current_user %>
-                      <div class="product-btns">
-                        <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-                        <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                        <%= f.submit "Add to cart", class: 'primary-btn add-to-cart' %>
-                      </div>
-                      <% end %>
+                    <h3 class="product-price"><%= product.price %></h3>
+                    <div class="product-rating">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star-o empty"></i>
+                    </div>
+                    <h2 class="product-name"><%= link_to (product.name.truncate(10)), :controller => "products", :action => "show", :id => product.id %></h2>
+                    <% if current_user %>
+                    <div class="product-btns">
+                      <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
+                      <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
+                      <%= button_to 'Add to Cart', order_items_path(:product_id => product), :remote => true, class: "primary-btn add-to-cart" %>
+                    </div>
                     <% end %>
                   </div>
                 </div>
@@ -198,7 +192,6 @@
         </div>
       </div>
 
-
       <% @products.each do |product| %>
         <div class="col-md-3 col-sm-6 col-xs-6">
           <div class="product product-single">
@@ -211,22 +204,20 @@
             </div>
 
             <div class="product-body">
-              <%= form_for(@order_item, remote: true) do |f| %>
-              <%= f.hidden_field :product_id, value: product.id %>
-              <%= f.hidden_field :quantity, value: 1 %>
-                <h3 class="product-price"><%= product.price %></h3>
-                <div class="product-rating">
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star-o empty"></i>
-                </div>
-                <h2 class="product-name"><%= link_to (product.name.truncate(10)), :controller => "products", :action => "show", :id => product.id %></h2>
+              <h3 class="product-price"><%= product.price %></h3>
+              <div class="product-rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o empty"></i>
+              </div>
+              <h2 class="product-name"><%= link_to (product.name.truncate(10)), :controller => "products", :action => "show", :id => product.id %></h2>
+              <% if current_user %>
                 <div class="product-btns">
                   <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                   <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                  <%= f.submit "Add to cart", class: 'primary-btn add-to-cart' %>
+                  <%= button_to 'Add to Cart', order_items_path(:product_id => product), :remote => true, class: "primary-btn add-to-cart" %>
                 </div>
               <% end %>
             </div>
@@ -237,4 +228,5 @@
     </div>
   </div>
 </div>
+
 
