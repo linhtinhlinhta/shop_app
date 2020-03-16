@@ -17,4 +17,5 @@
 //= require nouislider.min
 //= require jquery.zoom.min
 //= require main
+//= require preview_image
 //= cable.js

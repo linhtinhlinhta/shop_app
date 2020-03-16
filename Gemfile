@@ -57,3 +57,5 @@ gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'devise'
 gem "ransack"
+gem 'carrierwave'
+gem 'mini_magick'
