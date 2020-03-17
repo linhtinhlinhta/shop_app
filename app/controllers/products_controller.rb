@@ -5,7 +5,9 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @order_item = current_user.cart.order_items.new
+    if current_user
+      @order_item = current_user.cart.order_items.new
+    end
   end
 
   private

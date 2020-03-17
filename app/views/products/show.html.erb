@@ -69,15 +69,7 @@
             </div>
 
             <div class="product-btns">
-              <div class="qty-input">
-                <span class="text-uppercase">QTY: </span>
-                <input class="input" type="number">
-              </div>
-              <%= form_for(@order_item, remote: true) do |f| %>
-                <%= f.hidden_field :product_id, value: @product.id %>
-                <%= f.hidden_field :quantity, value: 1 %>
-                <%= f.submit "Add to cart", class: 'primary-btn add-to-cart' %>
-              <% end %>
+              <%= button_to 'Add to Cart', order_items_path(:product_id => @product), :remote => true, class: "primary-btn add-to-cart" %>
               <div class="pull-right">
                 <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                 <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
@@ -198,6 +190,7 @@
         </div>
       </div>
     </div>
+  </div>
 </div>
 
 

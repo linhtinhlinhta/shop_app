@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   private
   def set_search
-    @q=Product.search(params[:q])
+    @q = Product.search(params[:q])
   end
 
   def configure_permitted_parameters
