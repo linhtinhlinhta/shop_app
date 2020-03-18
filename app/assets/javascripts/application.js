@@ -19,5 +19,3 @@
 //= require main
 //= require preview_image
 //= cable.js
-
-

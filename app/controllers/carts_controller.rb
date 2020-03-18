@@ -8,5 +8,3 @@ class CartsController < ApplicationController
     @cart.destroy
   end
 end
-
-

@@ -6,4 +6,3 @@ class OrderItem < ApplicationRecord
     product.price * quantity
   end
 end
-

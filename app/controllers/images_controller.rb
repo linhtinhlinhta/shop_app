@@ -10,4 +10,3 @@ class ImagesController < ApplicationController
     params.require(:comment).permit(:image_url, :color)
   end
 end
-
