@@ -2,7 +2,7 @@ class HomesController < ApplicationController
   def index
     @products = @q.result(distinct: true).page(params[:page]).per(HOME_PAGINATES_PER)
     if current_user
-      @cart = current_user.cart
+      @cart = Cart.create(user: current_user)
       @order_item = @cart.order_items.new
     end
   end

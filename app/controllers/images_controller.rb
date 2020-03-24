@@ -7,6 +7,6 @@ class ImagesController < ApplicationController
 
   private
   def image_params
-    params.require(:comment).permit(:image_url, :color)
+    params.require(:image).permit(:image_url, :color, :remote_image_url_url)
   end
 end
