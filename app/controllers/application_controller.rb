@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   private
   def set_search
-    @q=Product.search(params[:q])
+    @q = Product.search(params[:q])
   end
 
   def configure_permitted_parameters
@@ -21,4 +21,3 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:avatar, :email, :password, :current_password)}
   end
 end
-

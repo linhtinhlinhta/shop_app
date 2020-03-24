@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @order_item = current_user.cart.order_items.new if current_user
   end
 
   private
@@ -12,4 +13,3 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:name, :price)
   end
 end
-
