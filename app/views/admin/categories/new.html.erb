@@ -1,0 +1,6 @@
+<h3>Create a Category</h3>
+<%= form_for [:admin, @category] do |f| %>
+  <p>Enter Category's Name: <%= f.text_field :name, placeholder: "name" %></p>
+
+  <%= f.submit %>
+<% end %>

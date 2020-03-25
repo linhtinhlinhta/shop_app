@@ -1,0 +1,7 @@
+<h3>Edit a Product</h3>
+<%= form_for [:admin, @product] do |f| %>
+  <p>Enter Product's New Name: <%= f.text_field :name %></p>
+  <p>Enter Product's New Price: <%= f.text_field :price %></p>
+  <p>Enter Product's Category: <%= f.select :category_id, options_from_collection_for_select(Category.all, "id", "name"), include_blank: true %></p>
+  <%= f.submit %>
+<% end %>

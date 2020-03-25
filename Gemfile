@@ -52,7 +52,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'rails_admin'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'devise'
@@ -61,4 +60,4 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'jquery-rails'
 gem 'byebug'
-
+gem 'rails_admin'

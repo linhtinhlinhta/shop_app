@@ -1,0 +1,6 @@
+<h3>Edit a Category</h3>
+<%= form_for [:admin, @category] do |f| %>
+  <p>Enter Category's New Name: <%= f.text_field :name %></p>
+
+  <%= f.submit %>
+<% end %>
