@@ -6,8 +6,11 @@ class Admin::ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.create(product_params)
-    redirect_to admin_products_path
+    @product = Product.new(product_params)
+    if @product.save
+      UpdateProductJob.perform_later(@product)
+      redirect_to admin_products_path
+    end
   end
 
   def new
@@ -20,6 +23,8 @@ class Admin::ProductsController < ApplicationController
   end
 
   def show
+    @product = Product.find(params[:id])
+    UpdateProductJob.perform_later(@product.id)
   end
 
   def update
@@ -29,10 +34,6 @@ class Admin::ProductsController < ApplicationController
   end
 
   def destroy
-    @category = Category.find(params[:id])
-    if @category.destroy
-      @products = @category.products.destroy
-    end
     @product = Product.find(params[:id])
     @product.destroy
     redirect_to admin_products_path
@@ -40,6 +41,6 @@ class Admin::ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :price, :category_id)
+    params.require(:product).permit(:name, :price, :code, :description, :category_id)
   end
 end

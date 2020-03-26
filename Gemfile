@@ -61,3 +61,4 @@ gem 'mini_magick'
 gem 'jquery-rails'
 gem 'byebug'
 gem 'rails_admin'
+gem "font-awesome-rails"

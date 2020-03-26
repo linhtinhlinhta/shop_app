@@ -1,0 +1,29 @@
+<!-- HEADER -->
+<header>
+  <div id="header">
+    <div class="container">
+      <div class="pull-left">
+        <div class="header-logo">
+          <%= link_to image_tag("logo.png"), root_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div id="navigation">
+  <div class="container">
+    <div id="responsive-nav">
+      <div class="category-nav show-on-click">
+        <span class="category-header">DASHBOARD</span>
+      </div>
+      <div class="menu-nav">
+        <span class="menu-header">Menu <i class="fa fa-bars"></i></span>
+        <ul class="menu-list">
+          <li><%= link_to "Categories", admin_categories_path %></li>
+          <li><%= link_to "Products", admin_products_path %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
