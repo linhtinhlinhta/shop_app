@@ -13,6 +13,7 @@
                 <th class="text-center">NAME</th>
                 <th class="text-center">PRICE</th>
                 <th class="text-center">DESCRIPTION</th>
+                <th class="text-center">IMAGES</th>
               </tr>
             </thead>
             <tbody>
@@ -21,6 +22,11 @@
                 <td class="text-center"><%= @product.name %></td>
                 <td class="text-center"><%= @product.price %></td>
                 <td class="text-center"><%= @product.description.truncate(20) %></td>
+                <td class="text-center">
+                  <% @images.each do |img| %>
+                    <%= image_tag img.image_url, style: "max-width: 40px; max-height: 40px" %>
+                  <% end %>
+                </td>
                 <div class="btn-group">
                   <td><%= link_to fa_icon("edit"), edit_admin_product_path(@product) %></td>
                   <td><%= link_to fa_icon("backward"), admin_products_path() %></td>
@@ -30,7 +36,7 @@
             </tbody>
           </table>
           <div class="pull-left">
-            <%= link_to 'Add Category', new_admin_category_path, class: "primary-btn" %>
+            <%= link_to 'Add Product', new_admin_product_path, class: "primary-btn" %>
           </div>
         </div>
       </div>
