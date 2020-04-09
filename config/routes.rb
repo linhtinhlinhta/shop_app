@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   resources :products do
     resources :images
@@ -12,6 +11,12 @@ Rails.application.routes.draw do
   resources :order_items
 
   resource :carts, only: [:show]
+
+  namespace :admin do
+    resources :dashboards
+    resources :categories
+    resources :products
+  end
 
   root 'homes#index'
 

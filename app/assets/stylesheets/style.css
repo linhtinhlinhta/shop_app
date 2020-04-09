@@ -211,7 +211,6 @@ textarea.input {
 .list-links li>a {
   position: relative;
   display: inline-block;
-  text-transform: uppercase;
   padding: 2px 0px;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
@@ -231,6 +230,10 @@ textarea.input {
   transition: 0.3s all;
 }
 
+.contact>i {
+  margin-right: 15px;
+}
+
 .list-links li>a:hover, .list-links li>a:focus, .list-links li.active>a {
   color: #F8694A;
   -webkit-transform: translateX(10px);
@@ -242,6 +245,8 @@ textarea.input {
   opacity: 1;
   visibility: visible;
 }
+
+
 
 /*----------------------------*\
 	Sections
@@ -1606,10 +1611,6 @@ textarea.input {
   margin-bottom: 30px;
 }
 
-.footer-logo .logo {
-  display: inline-block;
-}
-
 .footer-logo .logo>img {
   width: 100%;
   max-height: 70px;
@@ -1619,6 +1620,11 @@ textarea.input {
   display: inline-block;
   margin-right: 15px;
   margin-bottom: 6px;
+  font-size: 25px;
+}
+
+.footer-social>li:hover {
+  transform: scale(1.5);
 }
 
 .footer-social>li:last-child {

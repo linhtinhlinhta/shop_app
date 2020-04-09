@@ -119,7 +119,7 @@
               <% category.products.each do |product| %>
                 <div class="product product-single">
                   <div class="product-thumb">
-
+                    <%= image_tag product.images.first.image_url %>
                   </div>
                   <div class="product-body">
                     <h3 class="product-price"><%= product.price %></h3>

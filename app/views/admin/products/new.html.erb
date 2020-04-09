@@ -1,0 +1,43 @@
+<div class="section">
+  <div class="container">
+    <div class="col-md-8">
+      <h2>Create a Product</h2>
+      <%= form_for([:admin, @product], html: {multipart: true}) do |f| %>
+        <div class="form-group">
+          <label class="col-sm-2 col-form-label"><b>Category:</b></label>
+          <%= f.select :category_id, options_from_collection_for_select(Category.all, "id", "name"), {include_blank: true}, {:class => "form-control"} %>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 col-form-label"><b>Code</b></label>
+          <%= f.text_field :code, required: true, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 col-form-label"><b>Name</b></label>
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 col-form-label"><b>Price</b></label>
+          <%= f.text_field :price, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 col-form-label"><b>Description</b></label>
+          <%= f.text_area :description, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 col-form-label"><b>Image</b></label>
+          <%= f.fields_for :images do |p| %>
+            <ul class="media-list clearfix">
+              <li class="myupload">
+                <span>
+                  <i class="fa fa-plus"></i>
+                  <%= p.file_field :image_url, multiple: true, class: "picupload", name: "images[image_url][]" %>
+                </span>
+              </li>
+            </ul>
+          <% end %>
+        </div>
+        <%= f.submit "Save", :class => 'primary-btn' %>
+      <% end %>
+    </div>
+  </div>
+</div>

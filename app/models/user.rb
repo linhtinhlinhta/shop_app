@@ -7,4 +7,5 @@ class User < ApplicationRecord
          :confirmable
 
   has_one :cart
+
 end

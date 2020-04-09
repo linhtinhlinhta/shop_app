@@ -2,4 +2,6 @@ class Product < ApplicationRecord
   has_many :images
   belongs_to :category
   has_many :order_items
+  validates :code, presence: true
+  accepts_nested_attributes_for :images
 end

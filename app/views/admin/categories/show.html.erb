@@ -1,0 +1,35 @@
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="order-summary clearfix">
+          <div class="section-title">
+            <h2>CATEGORY</h2>
+          </div>
+          <table class="shopping-cart-table table">
+            <thead>
+              <tr>
+                <th class="text-center">ID</th>
+                <th class="text-center">NAME</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-center"><%= @category.id %></td>
+                <td class="text-center"><%= @category.name %></td>
+                <div class="btn-group">
+                  <td><%= link_to fa_icon("edit"), edit_admin_category_path(@category) %></td>
+                  <td><%= link_to fa_icon("backward"), admin_categories_path() %></td>
+                  <td><%= link_to fa_icon("trash"), [:admin, @category], method: :delete, data: { confirm: 'Are you sure?'} %></td>
+                </div>
+              </tr>
+            </tbody>
+          </table>
+          <div class="pull-left">
+            <%= link_to 'Add Category', new_admin_category_path, class: "primary-btn" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

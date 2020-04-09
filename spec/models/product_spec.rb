@@ -7,4 +7,11 @@ RSpec.describe Product, type: :model do
     it { should have_many(:order_items) }
   end
 
+  context "validates" do
+    it { should validate_presence_of(:code) }
+  end
+
+  context "accep_nested" do
+    it { should accept_nested_attributes_for(:images) }
+  end
 end

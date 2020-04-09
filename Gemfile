@@ -39,6 +39,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -56,9 +57,13 @@ group :test do
   gem 'shoulda-matchers'
 end
 
+ group :test do
+  gem 'shoulda'
+  gem 'shoulda-matchers'
+ end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'rails_admin'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'devise'
@@ -67,4 +72,6 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'jquery-rails'
 gem 'byebug'
+gem 'rails_admin'
+gem "font-awesome-rails"
 gem 'sendgrid'
