@@ -14,5 +14,4 @@ RSpec.describe Product, type: :model do
   context "accep_nested" do
     it { should accept_nested_attributes_for(:images) }
   end
-
 end
