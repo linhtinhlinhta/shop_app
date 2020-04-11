@@ -1,4 +1,4 @@
-class Admin::ProductsController < ApplicationController
+class Admin::ProductsController < AdminController
   layout 'admin'
 
   def index
@@ -8,9 +8,6 @@ class Admin::ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      params[:images]['image_url'].each do |img|
-        @image = @product.images.create!(:image_url => img)
-      end
       UpdateProductJob.perform_later(@product)
       redirect_to admin_products_path
     end
@@ -30,13 +27,15 @@ class Admin::ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @images = @product.images.all
-    UpdateProductJob.perform_later(@product.id)
   end
 
   def update
     @product = Product.find(params[:id])
-    @product.update_attributes(product_params)
-    redirect_to admin_products_path
+    if @product.update_attributes(product_params)
+      redirect_to admin_products_path
+    else
+      render action: :edit
+    end
   end
 
   def destroy
@@ -47,6 +46,8 @@ class Admin::ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :price, :code, :description, :category_id, images_attributes: [:image_url])
+    params.require(:product)
+          .permit(:name, :price, :code, :description,
+                  :category_id, images_attributes: Image.attribute_names.map(&:to_sym).push(:_destroy))
   end
 end

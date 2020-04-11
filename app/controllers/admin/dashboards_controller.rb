@@ -1,3 +1,4 @@
-class Admin::DashboardsController < ApplicationController
+class Admin::DashboardsController < AdminController
   layout 'admin'
+
 end

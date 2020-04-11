@@ -35,8 +35,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
           }
         }
       }
+
     });
 
+    $("#show-limit").on("change", function(){
+      $(this).closest("form").trigger("submit");
+    });
 
     // HOME SLICK
     $('#home-slick').slick({
@@ -47,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
 
     // PRODUCTS SLICK
-    $('#product-slick-1').slick({
+    $('.slideshow').slick({
       slidesToShow: 3,
       slidesToScroll: 2,
       autoplay: true,
@@ -55,35 +59,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
       speed: 300,
       dots: true,
       arrows: false,
-      appendDots: '.product-slick-dots-1',
-      responsive: [{
-          breakpoint: 991,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            dots: false,
-            arrows: true,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-          }
-        },
-      ]
-    });
-
-    $('#product-slick-2').slick({
-      slidesToShow: 3,
-      slidesToScroll: 2,
-      autoplay: true,
-      infinite: true,
-      speed: 300,
-      dots: true,
-      arrows: false,
-      appendDots: '.product-slick-dots-2',
       responsive: [{
           breakpoint: 991,
           settings: {
@@ -146,6 +121,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
       });
     }
+
+    $('#cart-opacity').click(function() {
+      $('.popup').attr("style", "display:flex");
+    });
+    $('.close').click(function() {
+      $('.popup').attr("style", "display:none");
+    });
 
   })(jQuery);
 

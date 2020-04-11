@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @products = @q.result(distinct:true).page(params[:page]).per(HOME_PAGINATES_PER)
+    @products = @q.result(distinct:true).page(params[:page]).per params[:limit]
   end
 
   def show

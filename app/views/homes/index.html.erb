@@ -64,7 +64,6 @@
   </div>
 </div>
 
-
 <div class="section">
   <div class="container">
     <% @categories.each do |category| %>
@@ -90,10 +89,10 @@
                 <li><span>00 M</span></li>
                 <li><span>00 S</span></li>
               </ul>
-
+              <%= image_tag category.products.first.images.first.image_url %>
             </div>
             <div class="product-body">
-              <h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3>
+              <h3 class="product-price"><%= category.products.first.price %> </h3>
               <div class="product-rating">
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
@@ -101,12 +100,12 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star-o empty"></i>
               </div>
-              <h2 class="product-name"><%= link_to @products.first.name, :controller => "products", :action => "show", :id => @products.first.id %></h2>
+              <h2 class="product-name"><%= link_to category.products.first.name.truncate(20), product_path(category.products.first.id) %></h2>
               <% if current_user %>
                 <div class="product-btns">
                   <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                   <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                  <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                  <%= button_to 'Add to Cart', order_items_path(:product_id =>category.products.first), :remote => true, class: "primary-btn add-to-cart" %>
                 </div>
               <% end %>
             </div>
@@ -115,7 +114,7 @@
 
         <div class="col-md-9 col-sm-6 col-xs-6">
           <div class="row">
-            <%= content_tag :div, id: "product-slick-#{category.id}", class: "product-slick" do %>
+            <%= content_tag :div, class: "product-slick slideshow" do %>
               <% category.products.each do |product| %>
                 <div class="product product-single">
                   <div class="product-thumb">
@@ -130,7 +129,7 @@
                       <i class="fa fa-star"></i>
                       <i class="fa fa-star-o empty"></i>
                     </div>
-                    <h2 class="product-name"><%= link_to (product.name.truncate(10)), :controller => "products", :action => "show", :id => product.id %></h2>
+                    <h2 class="product-name"><%= link_to (product.name.truncate(20)), product_path(product.id) %></h2>
                     <% if current_user %>
                     <div class="product-btns">
                       <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
@@ -200,7 +199,7 @@
                 <span>New</span>
                 <span class="sale">-20%</span>
               </div>
-
+              <%= image_tag product.images.first.image_url %>
             </div>
 
             <div class="product-body">

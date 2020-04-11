@@ -15,33 +15,26 @@ $(function() {
     readURL(this);
   });
 
-  var names = [];
-  $('.picupload').change(function(event) {
-    var files = event.target.files;
-
-    for (var i = 0; i < files.length; i++) {
-        var file = files[i];
-        names.push($(this).get(0).files[i].name);
-
-        var picReader = new FileReader();
-        picReader.fileName = file.name
-        picReader.addEventListener("load", function(event) {
-
-            var picFile = event.target;
-
-            var div = document.createElement("li");
-
-            div.innerHTML = "<img src='" + picFile.result + "'" +
-                "title='" + picFile.name + "'/>";
-
-            $(".media-list").prepend(div);
-
-        });
-
-        picReader.readAsDataURL(file);
-
+  var onAddFile;
+  onAddFile = function(event) {
+    var file, thumbContainer, url;
+    file = event.target.files[0];
+    url = URL.createObjectURL(file);
+    thumbContainer = $(this).parent().siblings('div.thumb');
+    if (thumbContainer.find('img').length === 0) {
+      return thumbContainer.append('<img src="' + url + '" />');
+    } else {
+      return thumbContainer.find('img').attr('src', url);
     }
 
+  };
+  $('input[type=file]').each(function() {
+    return $(this).change(onAddFile);
   });
+  $('body').on('cocoon:after-insert', function(e, addedPartial) {
+    return $('input[type=file]', addedPartial).change(onAddFile);
+  });
+  $('a.add_fields').data('association-insertion-method', 'append');
+  return $('a.add_fields').data('association-insertion-node', 'div.image-form');
 
 });

@@ -23,20 +23,18 @@
           <label class="col-sm-2 col-form-label"><b>Description</b></label>
           <%= f.text_area :description, class: "form-control" %>
         </div>
-        <div class="form-group">
-          <label class="col-sm-2 col-form-label"><b>Image</b></label>
-          <%= f.fields_for :images do |p| %>
-            <ul class="media-list clearfix">
-              <li class="myupload">
-                <span>
-                  <i class="fa fa-plus"></i>
-                  <%= p.file_field :image_url, multiple: true, class: "picupload", name: "images[image_url][]" %>
-                </span>
-              </li>
-            </ul>
-          <% end %>
+        <div class="form-group add-img">
+          <%= link_to_add_association 'Add Image', f, :images, class: "btn btn-warning" %>
+          <div class="image-form">
+            <%= f.fields_for :images do |img| %>
+              <%= render "image_fields", f: img %>
+            <% end %>
+          </div>
         </div>
-        <%= f.submit "Save", :class => 'primary-btn' %>
+        <div class="form-actions">
+          <%= f.submit "Save Product", class: "btn btn-primary" %>
+          <%= link_to "Back Product's Page", admin_products_path(), class: "btn btn-info" %>
+        </div>
       <% end %>
     </div>
   </div>
