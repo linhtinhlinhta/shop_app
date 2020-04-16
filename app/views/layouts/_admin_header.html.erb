@@ -7,6 +7,20 @@
           <%= link_to image_tag("logo.png"), root_path %>
         </div>
       </div>
+
+      <div class="pull-right">
+        <ul class="header-btns">
+          <li class="header-account dropdown default-dropdown">
+            <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
+              <%= image_tag current_user.avatar.url, size:"40x40" %>
+            </div>
+            <ul class="custom-menu">
+              <li><%= link_to "Profile", user_path(current_user) %></li>
+              <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </header>
@@ -15,7 +29,7 @@
   <div class="container">
     <div id="responsive-nav">
       <div class="category-nav show-on-click">
-        <span class="category-header">DASHBOARD</span>
+        <span class="category-header"><%= link_to "DASHBOARD", admin_dashboards_path %></span>
       </div>
       <div class="menu-nav">
         <span class="menu-header">Menu <i class="fa fa-bars"></i></span>

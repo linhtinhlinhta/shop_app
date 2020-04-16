@@ -445,6 +445,10 @@ textarea.input {
   border-radius: 50%;
 }
 
+#cart-opacity {
+  opacity: 0.2;
+}
+
 .header-cart.dropdown .custom-menu {
   width: 300px;
 }
@@ -465,6 +469,28 @@ textarea.input {
 
 #shopping-cart .shopping-cart-btns>button {
   width: calc(50% - 2px);
+}
+
+/* The actual popup */
+.popup {
+  display: none;
+}
+
+.popup-content {
+  width: 300px;
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 5px;
+  position: absolute;
+  right: 0;
+  z-index: 500;
+  margin-top: 10px;
+}
+
+.close {
+  position: absolute;
+  top: -5px;
+  right: -5px;
 }
 
 /*=========================================================
@@ -495,6 +521,10 @@ textarea.input {
   background: #F8694A;
   color: #FFF;
   font-weight: 700;
+}
+
+.category-nav .category-header>a {
+  color: white;
 }
 
 .category-nav .category-header>i {
@@ -1198,7 +1228,6 @@ textarea.input {
 #store {
   margin-top: 15px;
   padding-top: 30px;
-  border-top: 1px solid #DADADA;
   margin-bottom: 15px;
   padding-bottom: 30px;
   border-bottom: 1px solid #DADADA;
@@ -1266,6 +1295,10 @@ textarea.input {
 
 .store-pages li.active {
   color: #F8694A;
+}
+
+#result-search {
+  margin-top: 25px;
 }
 
 /*=========================================================
@@ -1701,39 +1734,9 @@ textarea.input {
   margin: 15px 0px;
 }
 
-/*=========================================================
-	12 -> RESPONSIVE
-===========================================================*/
-
-@media only screen and (max-width: 991px) {
-  #home .home-wrap {
-    margin-left: 0px;
-  }
-  #aside {
-    margin-bottom: 60px;
-  }
-  .product-reviews {
-    margin-bottom: 30px;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .banner h1 {
-    font-size: 36px;
-  }
-  .store-filter .pull-right, .store-filter .pull-left {
-    float: none !important;
-  }
-  .store-filter .pull-right {
-    margin-top: 15px;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  [class*='col-xs'] {
-    width: 100%;
-  }
-}
+/*----------------------------*\
+  Profile
+\*----------------------------*/
 
 .card.hovercard {
     position: relative;
@@ -1776,4 +1779,85 @@ textarea.input {
     line-height: 20px;
     color: #737373;
     text-overflow: ellipsis;
+}
+
+/*----------------------------*\
+  Admin
+\*----------------------------*/
+
+.remove {
+  margin-top: 20px;
+  margin-left: -115px;
+}
+
+.remove-pic {
+    font-size: 12px;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: block;
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    padding: 3px 0
+}
+
+.image-form {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding-bottom: 20px;
+}
+
+.image-form img {
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+}
+
+.add-img {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.add-img a {
+  margin-bottom: 10px;
+}
+
+.input-file {
+  margin-top: 50px;
+  margin-left: 100px;
+}
+
+/*=========================================================
+	13 -> RESPONSIVE
+===========================================================*/
+
+@media only screen and (max-width: 991px) {
+  #home .home-wrap {
+    margin-left: 0px;
+  }
+  #aside {
+    margin-bottom: 60px;
+  }
+  .product-reviews {
+    margin-bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .banner h1 {
+    font-size: 36px;
+  }
+  .store-filter .pull-right, .store-filter .pull-left {
+    float: none !important;
+  }
+  .store-filter .pull-right {
+    margin-top: 15px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  [class*='col-xs'] {
+    width: 100%;
+  }
 }

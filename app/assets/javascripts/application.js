@@ -18,4 +18,5 @@
 //= require jquery.zoom.min
 //= require main
 //= require preview_image
+//= require cocoon
 //= cable.js

@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :dashboards
     resources :categories
-    resources :products
+    resources :products do
+      resources :images
+    end
   end
 
   root 'homes#index'

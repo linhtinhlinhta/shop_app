@@ -2,7 +2,7 @@
   <div class="container">
     <div class="col-md-8">
       <h2>Edit a Product</h2>
-      <%= form_for [:admin, @product] do |f| %>
+      <%= form_for([:admin, @product], html: {multipart: true}) do |f| %>
         <div class="form-group">
           <label class="col-sm-2 col-form-label"><b>Category:</b></label>
           <%= f.select :category_id, options_from_collection_for_select(Category.all, "id", "name"), {}, {:class => "form-control"} %>
@@ -23,7 +23,18 @@
           <label class="col-sm-2 col-form-label"><b>Description</b></label>
           <%= f.text_area :description, class: "form-control" %>
         </div>
-        <%= f.submit "Save", :class => 'primary-btn' %>
+        <div class="form-group add-img">
+          <%= link_to_add_association 'Add Image', f, :images, class: "btn btn-warning" %>
+          <div class="image-form edit">
+            <%= f.fields_for :images do |img| %>
+              <%= render "image_fields", f: img %>
+            <% end %>
+          </div>
+        </div>
+        <div class="form-actions">
+          <%= f.submit "Save Product", class: "btn btn-primary" %>
+          <%= link_to "Back Product's Page", admin_products_path(), class: "btn btn-info" %>
+        </div>
       <% end %>
     </div>
   </div>

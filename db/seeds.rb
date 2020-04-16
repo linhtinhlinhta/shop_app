@@ -29,7 +29,9 @@ data.css(".ms-level0").take(2).each do |category|
     product_info = product_doc.css(".product-shop-content")
     product_name = product_info.css(".product-name").css("span").text
     product_price = product_info.css(".price").text
-    product = Product.create!(:name => product_name, :price => product_price, :code => product_code, :category_id => category.id)
+    product_description = product_info.css(".product-detail-tabs").css("#product-detail-tab-content-1").text.gsub(/\s+/, " ")
+    product = Product.create!(:name => product_name, :price => product_price,
+                              :code => product_code, :description => product_description, :category_id => category.id)
 
     image_doc = product_doc.css("#product-image-gallery-thumb").css(".item")
     image_doc.css(".item").each do |img|

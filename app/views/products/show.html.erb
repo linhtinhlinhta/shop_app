@@ -2,10 +2,10 @@
 <div id="breadcrumb">
   <div class="container">
     <ul class="breadcrumb">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Products</a></li>
-      <li><a href="#">Category</a></li>
-      <li class="active">Product Name Goes Here</li>
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to @product.category.name, category_path(@product.category_id) %></li>
+      <li><%= link_to "Products", products_path %></li>
+      <li class="active"><%= @product.name %></li>
     </ul>
   </div>
 </div>
@@ -38,11 +38,22 @@
             </div>
             <h2 class="product-name"><%= @product.name %></h2>
             <h3 class="product-price"><%= @product.price %></h3>
-            <p><%= @product.description %></p>
-
-            <div class="product-btns">
-              <%= button_to 'Add to Cart', order_items_path(:product_id => @product), :remote => true, class: "primary-btn add-to-cart" %>
+            <div>
+              <div class="product-rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o empty"></i>
+              </div>
+              <a href="#">3 Review(s) / Add Review</a>
             </div>
+            <p><%= @product.description %></p>
+            <% if current_user %>
+              <div class="product-btns">
+                <%= button_to 'Add to Cart', order_items_path(:product_id => @product), :remote => true, class: "primary-btn add-to-cart" %>
+              </div>
+            <% end %>
           </div>
         </div>
         <div class="col-md-12">

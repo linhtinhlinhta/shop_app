@@ -20,4 +20,13 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:avatar, :email, :password)}
     devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:avatar, :email, :password, :current_password)}
   end
+
+  def after_sign_in_path_for(resource)
+    if resource.has_role? :admin
+      admin_dashboards_path
+    else
+      super
+    end
+  end
+
 end
