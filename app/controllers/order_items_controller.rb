@@ -1,9 +1,4 @@
 class OrderItemsController < ApplicationController
-  before_action :set_order_item
-  def index
-    @order_items = OrderItem.all
-  end
-
   def create
     @cart = current_user.cart
     product = Product.find(params[:product_id])
@@ -30,7 +25,4 @@ class OrderItemsController < ApplicationController
     params.require(:order_item).permit(:product_id, :cart_id, :quantity)
   end
 
-  def set_order_item
-    @order_item = OrderItem.find_by(params[:id])
-  end
 end

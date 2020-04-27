@@ -122,12 +122,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
       });
     }
 
-    $('#cart-opacity').click(function() {
-      $('.popup').attr("style", "display:flex");
-    });
-    $('.close').click(function() {
-      $('.popup').attr("style", "display:none");
-    });
+    setTimeout(function(){
+      $('.alert-success').remove();
+    }, 2000);
 
   })(jQuery);
 

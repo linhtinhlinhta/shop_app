@@ -11,7 +11,6 @@ $(function() {
   }
 
   $("#avatar-upload").change(function(){
-    $('#img_prev').removeClass('hidden');
     readURL(this);
   });
 
@@ -35,6 +34,6 @@ $(function() {
     return $('input[type=file]', addedPartial).change(onAddFile);
   });
   $('a.add_fields').data('association-insertion-method', 'append');
-  return $('a.add_fields').data('association-insertion-node', 'div.image-form');
+  $('a.add_fields').data('association-insertion-node', 'div.image-form');
 
 });

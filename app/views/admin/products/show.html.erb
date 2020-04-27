@@ -1,44 +1,59 @@
-<div class="section">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="order-summary clearfix">
-          <div class="section-title">
-            <h3>PRODUCT</h3>
-          </div>
-          <table class="shopping-cart-table table">
-            <thead>
-              <tr>
-                <th class="text-center">CODE</th>
-                <th class="text-center">NAME</th>
-                <th class="text-center">PRICE</th>
-                <th class="text-center">DESCRIPTION</th>
-                <th class="text-center">IMAGES</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="text-center"><%= @product.code %></td>
-                <td class="text-center"><%= @product.name %></td>
-                <td class="text-center"><%= @product.price %></td>
-                <td class="text-center"><%= @product.description.truncate(20) %></td>
-                <td class="text-center">
-                  <% @images.each do |img| %>
-                    <%= image_tag img.image_url, style: "max-width: 40px; max-height: 40px" %>
-                  <% end %>
-                </td>
-                <div class="btn-group">
-                  <td><%= link_to fa_icon("edit"), edit_admin_product_path(@product) %></td>
-                  <td><%= link_to fa_icon("backward"), admin_products_path() %></td>
-                  <td><%= link_to fa_icon("trash"), [:admin, @product], method: :delete, data: { confirm: 'Are you sure?'} %></td>
-                </div>
-              </tr>
-            </tbody>
-          </table>
-          <div class="pull-left">
-            <%= link_to 'Add Product', new_admin_product_path, class: "primary-btn" %>
-          </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="nav-dashboard col-md-2">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="list-nav">NAVIGATION</li>
+        <li><%= link_to "Categories", admin_categories_path %></li>
+        <li class="active"><%= link_to "Products", admin_products_path %></li>
+      </ul>
+    </div>
+
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
+      <div class="content">
+        <div class="ad-head-title">
+          <h1>Show Product</h1>
         </div>
+
+        <div id="breadcrumb" class="bread-admin">
+          <ul class="breadcrumb">
+            <li><%= link_to "Dashboard", admin_path %></li>
+            <li><%= link_to "Products", admin_products_path %></li>
+            <li>Product #<%= @product.id %></li>
+          </ul>
+        </div>
+
+        <ul class="nav nav-tabs">
+          <li class="active"><%= link_to '<i class="fa fa-eye"></i> Show'.html_safe, admin_product_path(@product) %></li>
+          <li><%= link_to '<i class="fa fa-edit"></i> Edit'.html_safe, edit_admin_product_path(@product) %></li>
+          <li><%= link_to '<i class="fa fa-trash"></i> Delete'.html_safe, [:admin, @product], method: :delete, data: { confirm: 'Are you sure?'} %></li>
+        </ul>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>CODE</th>
+              <th>NAME</th>
+              <th>PRICE</th>
+              <th>CATEGORY</th>
+              <th>DESCRIPTION</th>
+              <th>IMAGES</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= @product.code %></td>
+              <td><%= @product.name %></td>
+              <td><%= @product.price %></td>
+              <td><%= @product.category.name %></td>
+              <td><%= @product.description.truncate(20) %></td>
+              <td>
+                <% @images.each do |img| %>
+                  <%= image_tag img.image_url, style: "max-width: 40px; max-height: 40px" %>
+                <% end %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

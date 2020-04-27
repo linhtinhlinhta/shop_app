@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+ Rails.application.routes.draw do
   devise_for :users
 
   resources :products do
@@ -12,8 +12,8 @@ Rails.application.routes.draw do
 
   resource :carts, only: [:show]
 
+  get 'admin/', to: 'admin#dashboard'
   namespace :admin do
-    resources :dashboards
     resources :categories
     resources :products do
       resources :images

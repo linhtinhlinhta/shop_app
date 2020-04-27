@@ -471,28 +471,6 @@ textarea.input {
   width: calc(50% - 2px);
 }
 
-/* The actual popup */
-.popup {
-  display: none;
-}
-
-.popup-content {
-  width: 300px;
-  background: #f5f5f5;
-  padding: 20px;
-  border-radius: 5px;
-  position: absolute;
-  right: 0;
-  z-index: 500;
-  margin-top: 10px;
-}
-
-.close {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-}
-
 /*=========================================================
 	03 -> NAVIGATION
 ===========================================================*/
@@ -821,15 +799,27 @@ textarea.input {
 
 .banner>img {
   width: 100%;
+  transition: .5s;
+  opacity: 1;
 }
 
 .banner.banner-1 .banner-caption {
+  transition: .5s;
+  opacity: 0;
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.banner:hover .img-banner {
+  opacity: 0.5;
+}
+
+.banner:hover .banner-caption {
+  opacity: 1;
 }
 
 .banner.banner-2 .banner-caption {
@@ -837,11 +827,6 @@ textarea.input {
   left: 10%;
   right: 10%;
   bottom: 10%;
-}
-
-.banner h1 {
-  font-size: 46px;
-  text-transform: uppercase;
 }
 
 /*=========================================================
@@ -1738,56 +1723,218 @@ textarea.input {
   Profile
 \*----------------------------*/
 
-.card.hovercard {
-    position: relative;
-    padding-top: 0;
-    overflow: hidden;
-    text-align: center;
-    background-color: rgba(214, 224, 226, 0.2);
+.form-avatar {
+  background: #fff;
+  margin: 0;
+  padding: 30px;
+  box-shadow: 0px 20px 80px 0px rgba(153, 153, 153, 0.3);
 }
 
-.card.hovercard .cardheader {
-    background: url("http://lorempixel.com/850/280/nature/4/");
-    background-size: cover;
-    height: 135px;
+.avatar img {
+    width: 450px;
+    height: 450px;
 }
 
-.card.hovercard .avatar {
-    position: relative;
-    top: -50px;
-    margin-bottom: -50px;
+.custom-info {
+  margin-top: 10%;
 }
 
-.card.hovercard .avatar img {
-    width: 100px;
-    height: 100px;
-    max-width: 100px;
-    max-height: 100px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    border: 5px solid rgba(255,255,255,0.5);
+.custom-info h3 {
+  font-size: 48px;
+  text-transform: uppercase;
 }
 
-.card.hovercard .info {
-    padding: 4px 8px 10px;
+.custom-info h6 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2.1px;
+  font-weight: normal;
+  margin-bottom: 15px;
 }
 
-.card.hovercard .info .desc {
-    overflow: hidden;
-    font-size: 12px;
-    line-height: 20px;
-    color: #737373;
-    text-overflow: ellipsis;
+.custom-info .list li {
+  margin-bottom: 15px;
+}
+
+.custom-info .list li i{
+  color: #F8694A;
+  margin-right: 15px;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background-color: #1c1e21;
+  color: white;
+  overflow: hidden;
+  width: 450px;
+  height: 0;
+  transition: .5s;
+}
+
+.overlay i{
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.avatar:hover .overlay {
+  height: 50%;
+  opacity: 0.7;
 }
 
 /*----------------------------*\
   Admin
 \*----------------------------*/
 
+input[type=email], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+.form-sign {
+  margin-left: 5px;
+  width: 45%;
+}
+
+.form-edit {
+  width: 45%;
+  background: #fff;
+  margin: 0;
+  margin-bottom: 30px;
+  padding: 50px;
+  box-shadow: 0px 20px 80px 0px rgba(153, 153, 153, 0.3);
+}
+
+.form-content {
+  margin: 5% auto 15% auto;
+  padding: 16px;
+}
+
+/* Set a style for all buttons */
+
+.btn-login, .btn-signup, .btn-confirm {
+  background-color: #30323A;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  text-align: center;
+}
+
+.btn-confirm {
+  background-color: #4CAF50;
+  width: 100%;
+}
+
+.btn-login:hover, .btn-signup:hover, .btn-confirm:hover {
+  opacity:1;
+}
+
+.btn-signup:hover {
+  color: white;
+}
+
+.btn-login {
+  background-color: #f8694A;
+}
+
+.btn-login, .btn-signup {
+  float: left;
+  width: 50%;
+}
+
+.field-avatar {
+  margin-top: 50px;
+}
+
+.form-signup hr {
+  width: 80%;
+}
+
+.alert-success{
+    position: absolute;
+    width: 330px;
+}
+
+.alert-error {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  text-align: left;
+}
+
+.body-shop {
+  opacity: 1;
+}
+
+.admin-header {
+  background-color: #f8f8f8;
+  border: 1px solid #eeeeee;
+}
+
+.container-fluid {
+
+  height: 100%;
+}
+
+.nav-dashboard {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  overflow-x: hidden;
+  float: left;
+  background-color: #f8f8f8;
+  top: 0;
+  padding: 0;
+  padding-top: 150px;
+}
+
+.list-nav {
+  padding: 15px 15px 3px;
+}
+
+.ad-head-title {
+  padding-bottom: 9px;
+  margin: 10px 0 20px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.content {
+  margin-top: 20px;
+  padding: 15px;
+}
+
+.ad-head-title h1 {
+  font-weight: 500;
+}
+
+.bread-admin {
+  background-color: #f8f8f8;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.list-nav {
+  color: #428BCA;
+  font-weight: bold;
+}
+
+.nav-tabs {
+  margin-bottom: 20px;
+}
+
 .remove {
   margin-top: 20px;
-  margin-left: -115px;
+  margin-left: -75px;
 }
 
 .remove-pic {
@@ -1825,7 +1972,7 @@ textarea.input {
 
 .input-file {
   margin-top: 50px;
-  margin-left: 100px;
+  margin-left: 50px;
 }
 
 /*=========================================================

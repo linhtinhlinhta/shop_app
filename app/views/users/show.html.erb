@@ -1,22 +1,23 @@
 <div class="section">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-3 col-sm-6">
-
-        <div class="card hovercard">
-          <div class="cardheader">
-
-          </div>
-          <div class="avatar">
-              <%= link_to image_tag(@user.avatar.url), edit_user_registration_path(@user) %>
-          </div>
-          <div class="info">
-              <div class="desc"><%= @user.email %></div>
+    <div class="row form-avatar">
+      <div class="col-md-6">
+        <div class="avatar">
+          <%= image_tag(@user.avatar.url) %>
+          <div class="overlay">
+            <%= link_to '<i class="fa fa-edit"> Chỉnh sửa</i>'.html_safe, edit_user_registration_path(@user) %>
           </div>
         </div>
-
+      </div>
+      <div class="col-md-6 custom-info">
+        <h6>Xin chao</h6>
+        <h3>Nguyen Linh</h3>
+        <ul class="list">
+          <li><i class="fa fa-phone"></i>033 666 888</li>
+          <li><i class="fa fa-envelope"></i><%= @user.email %></li>
+          <li><i class="fa fa-home"></i>Cau Giay, Ha Noi</li>
+        </ul>
       </div>
     </div>
-
   </div>
 </div>

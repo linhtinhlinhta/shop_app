@@ -1,4 +1,4 @@
-<!-- HEADER -->
+ <!-- HEADER -->
 <header>
   <div id="header">
     <div class="container">
@@ -22,13 +22,17 @@
           <li class="header-account dropdown default-dropdown">
             <% if current_user %>
               <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
-                <%= image_tag current_user.avatar.url, size:"40x40" %>
+                <% if current_user.avatar.file.nil? %>
+                  <%= image_tag "avatar.png", size:"40x40" %>
+                <% else %>
+                  <%= image_tag current_user.avatar.url, size:"40x40" %>
+                <% end %>
               </div>
               <ul class="custom-menu">
                 <li><%= link_to "Profile", user_path(current_user) %></li>
                 <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-                <% if current_user.has_role? :admin %>
-                  <li><%= link_to "Dashboard", admin_dashboards_path %></li>
+                <% if current_user.admin? %>
+                  <li><%= link_to "Dashboard", admin_path %></li>
                 <% end %>
               </ul>
             <% else %>
@@ -39,35 +43,22 @@
               </div>
               <ul class="custom-menu">
                 <li><%= link_to "Sign in", new_user_session_path %></li>
-                <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
                 <li><%= link_to "Sign up", new_user_registration_path%></li>
               </ul>
             <% end %>
           </li>
-          <li class="header-cart dropdown default-dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-              <div class="header-btns-icon">
-                <% if current_user %>
+          <% if current_user %>
+            <li class="header-cart dropdown default-dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                <div class="header-btns-icon">
                   <%= link_to '<i class="fa fa-shopping-cart"></i>'.html_safe, carts_path %>
                   <span class="qty">
                     <%= current_user.cart.order_items.size %>
                   </span>
-                <% else %>
-                  <div id="cart-opacity">
-                    <i class="fa fa-shopping-cart"></i>
-                  </div>
-                  <div class="popup">
-                    <div class="popup-content">
-                      <i class="fa fa-times-circle close"></i>
-                      <p class="text-center">Ban chua dang nhap!</p>
-                      <%= link_to "Sign in", new_user_session_path, class: "btn btn-warning" %>
-                      <%= link_to "Sign up", new_user_registration_path, class: "btn btn-info" %>
-                    </div>
-                  </div>
-                <% end %>
-              </div>
-            </a>
-          </li>
+                </div>
+              </a>
+            </li>
+          <% end %>
           <li class="nav-toggle">
             <button class="nav-toggle-btn main-btn icon-btn"><i class="fa fa-bars"></i></button>
           </li>

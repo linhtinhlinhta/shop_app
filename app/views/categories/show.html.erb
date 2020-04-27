@@ -54,7 +54,7 @@
                       <span>New</span>
                       <span class="sale">-20%</span>
                     </div>
-                    <%= image_tag product.images.first.image_url.url %>
+                    <%= image_tag product.images.first.image_url.url unless product.images.empty? %>
                   </div>
                   <div class="product-body">
                     <h3 class="product-price"><%= product.price %></h3>
