@@ -2,7 +2,7 @@ class Admin::ProductsController < AdminController
   layout 'admin'
 
   def index
-    @products = Product.all
+    @products = Product.all.page(params[:page]).per(10)
   end
 
   def create
@@ -48,6 +48,6 @@ class Admin::ProductsController < AdminController
   def product_params
     params.require(:product)
           .permit(:name, :price, :code, :description,
-                  :category_id, images_attributes: Image.attribute_names.map(&:to_sym).push(:_destroy))
+                  images_attributes: Image.attribute_names.map(&:to_sym).push(:_destroy))
   end
 end

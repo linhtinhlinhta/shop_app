@@ -1,35 +1,49 @@
-<div class="section">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="order-summary clearfix">
-          <div class="section-title">
-            <h2>CATEGORY</h2>
-          </div>
-          <table class="shopping-cart-table table">
-            <thead>
-              <tr>
-                <th class="text-center">ID</th>
-                <th class="text-center">NAME</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="text-center"><%= @category.id %></td>
-                <td class="text-center"><%= @category.name %></td>
-                <div class="btn-group">
-                  <td><%= link_to fa_icon("edit"), edit_admin_category_path(@category) %></td>
-                  <td><%= link_to fa_icon("backward"), admin_categories_path() %></td>
-                  <td><%= link_to fa_icon("trash"), [:admin, @category], method: :delete, data: { confirm: 'Are you sure?'} %></td>
-                </div>
-              </tr>
-            </tbody>
-          </table>
-          <div class="pull-left">
-            <%= link_to 'Add Category', new_admin_category_path, class: "primary-btn" %>
-          </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="nav-dashboard col-md-2">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="list-nav">NAVIGATION</li>
+        <li class="active"><%= link_to "Categories", admin_categories_path %></li>
+        <li><%= link_to "Products", admin_products_path %></li>
+      </ul>
+    </div>
+
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
+      <div class="content">
+        <div class="ad-head-title">
+          <h1>Show Category</h1>
         </div>
+
+        <div id="breadcrumb" class="bread-admin">
+          <ul class="breadcrumb">
+            <li><%= link_to "Dashboard", admin_path %></li>
+            <li><%= link_to "Categories", admin_categories_path %></li>
+            <li>Category #<%= @category.id %></li>
+          </ul>
+        </div>
+
+        <ul class="nav nav-tabs">
+          <li class="active"><%= link_to '<i class="fa fa-eye"></i> Show'.html_safe, admin_category_path(@category) %></li>
+          <li><%= link_to '<i class="fa fa-edit"></i> Edit'.html_safe, edit_admin_category_path(@category) %></li>
+          <li><%= link_to '<i class="fa fa-trash"></i> Delete'.html_safe, [:admin, @category], method: :delete, data: { confirm: 'Are you sure?'} %></li>
+        </ul>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>NAME</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= @category.id %></td>
+              <td><%= @category.name %></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
 </div>
+

@@ -1,6 +1,6 @@
 <div class="nested-fields row">
-  <div class="col-sm-5 input-file">
-    <%= f.file_field :image_url %>
+  <div class="col-sm-7 input-file">
+    <%= f.file_field :image_url, multiple: true %>
     <%= f.hidden_field :image_url_cache, value: f.object.image_url_cache %>
   </div>
   <div class="thumb col-sm-3">

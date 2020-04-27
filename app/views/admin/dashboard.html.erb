@@ -1,0 +1,68 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="nav-dashboard col-md-2">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="list-nav">NAVIGATION</li>
+        <li><%= link_to "Categories", admin_categories_path %></li>
+        <li><%= link_to "Products", admin_products_path %></li>
+      </ul>
+    </div>
+
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
+      <div class="content">
+        <div class="ad-head-title">
+          <h1>Site Administation</h1>
+        </div>
+
+        <div id="breadcrumb" class="bread-admin">
+          <ul class="breadcrumb">
+            <li><%= link_to "Dashboard", root_path %></li>
+          </ul>
+        </div>
+
+        <table class="table">
+          <thead>
+            <th class="col-md-2">Model name</th>
+            <th class="col-md-2">Last used</th>
+            <th class="col-md-7">Records</th>
+            <th colspan="2"></th>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= link_to "Categories", admin_categories_path %></td>
+              <td><%= Category.last.updated_at %></td>
+              <td>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+                  style="width:<%= Category.count*10 %>%">
+                    <%= Category.count %>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <td><%= link_to fa_icon("list"), admin_categories_path %></td>
+                <td><%= link_to fa_icon("plus"), new_admin_category_path %></td>
+              </td>
+            </tr>
+            <tr>
+              <td><%= link_to "Products", admin_products_path %></td>
+              <td><%= Product.last.updated_at %></td>
+              <td>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped active" role="progressbar"
+                  style="width:<%= Product.count*4 %>%">
+                     <%= Product.count %>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <td><%= link_to fa_icon("list"), admin_products_path %></td>
+                <td><%= link_to fa_icon("plus"), new_admin_product_path %></td>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

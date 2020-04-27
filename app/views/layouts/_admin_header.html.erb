@@ -1,6 +1,6 @@
 <!-- HEADER -->
 <header>
-  <div id="header">
+  <div id="header" class="admin-header">
     <div class="container">
       <div class="pull-left">
         <div class="header-logo">
@@ -12,7 +12,11 @@
         <ul class="header-btns">
           <li class="header-account dropdown default-dropdown">
             <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
-              <%= image_tag current_user.avatar.url, size:"40x40" %>
+              <% if current_user.avatar.file.nil? %>
+                <%= image_tag "avatar.png", size:"40x40" %>
+              <% else %>
+                <%= image_tag current_user.avatar.url, size:"40x40" %>
+              <% end %>
             </div>
             <ul class="custom-menu">
               <li><%= link_to "Profile", user_path(current_user) %></li>
@@ -24,20 +28,3 @@
     </div>
   </div>
 </header>
-
-<div id="navigation">
-  <div class="container">
-    <div id="responsive-nav">
-      <div class="category-nav show-on-click">
-        <span class="category-header"><%= link_to "DASHBOARD", admin_dashboards_path %></span>
-      </div>
-      <div class="menu-nav">
-        <span class="menu-header">Menu <i class="fa fa-bars"></i></span>
-        <ul class="menu-list">
-          <li><%= link_to "Categories", admin_categories_path %></li>
-          <li><%= link_to "Products", admin_products_path %></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
